@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Memory Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="tela-inicial">
+        <div class="modal">
+            <h2>Pokémon Memory Game</h2>
+            <input type="text" id="input-nome" placeholder="Digite seu nome..." required>
+            <button id="btn-iniciar">Iniciar Jogo</button>
+        </div>
+    </div>
+
+    <div id="hud" class="hidden">
+        <div>Jogador: <span id="hud-nome"></span></div>
+        <div>Tempo: <span id="hud-timer">00:00</span></div>
+        <div>Pares: <span id="hud-pares">0 / 10</span></div>
+    </div>
+
+    <div id="grid-cartas"></div>
+
+    <div id="tela-final" class="hidden">
+        <div class="modal">
+            <h2>Parabéns! Você Venceu!</h2>
+            <p>Sua pontuação: <span id="pontuacao-final">0</span> pts</p>
+            <p>Tempo total: <span id="tempo-final">00:00</span></p>
+            
+            <h3>Top 10 Leaderboard</h3>
+            <table id="tabela-ranking">
+                <thead>
+                    <tr>
+                        <th>Posição</th>
+                        <th>Jogador</th>
+                        <th>Pontuação</th>
+                        <th>Tempo</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-ranking"></tbody>
+            </table>
+            
+            <button id="btn-reiniciar">Jogar Novamente</button>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
