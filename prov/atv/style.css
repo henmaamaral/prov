@@ -1,0 +1,126 @@
+.hidden {
+     display: none !important
+}
+#tela-inicial {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que fique no topo */
+}
+
+.modal {
+    background: #012d6e;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #000000;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#tela-inicial.hidden {
+    display: none;
+}
+.portal-loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #064e3b;
+    border-top: 5px solid #84cc16;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+#resultados {
+    display: grid;
+    grid-template-columns: repeat(5, 12rem);
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.char-info {
+    text-align: center;
+    padding: 1rem;
+    color: white;
+}
+.card { 
+    width: 12rem;
+    height: 15rem;
+    perspective: 1000px;
+    cursor: pointer;
+}
+.card-verso {
+    background-color: #012d6e;
+    border: 2px solid #000000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 40px;
+    color: white;
+}    
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+.card.card-virada .card-inner {
+    transform: rotateY(180deg);
+}
+.card-frente,
+.card-verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 0.75rem;
+}
+.card-frente {
+    transform: rotateY(180deg);
+
+    background-color: rgb(16, 36, 71);
+    border: 2px solid #000000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card-frente img {
+    width: 120px;
+    max-height: 120px;
+    object-fit: contain;
+}
+.char-info { padding: 1rem; }
+
+#toast-container {
+    position: fixed;
+    top: 20px; right:
+    0px; z-index: 9999;
+}
+.toast {
+    padding: 15px; 
+    margin-bottom: 10px; 
+    color: white; 
+    border-radius: 5px; 
+    animation: slideIn 0.5s; 
+}
+.success { 
+    background: #84cc16; 
+}
+.error { 
+    background: #ef4444; 
+}
